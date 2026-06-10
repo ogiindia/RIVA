@@ -1,0 +1,19 @@
+{
+    "id": 207,
+    "ruleId": 164,
+    "instid": "1",
+    "description": "",
+    "name": "UPI CUMM 60K APP 5 MIN",
+    "caseId": "d99c9cc0-7f4a-4318-aaa4-b3bc2f618337",
+    "channel": "59",
+    "status": "Unassigned",
+    "score": "30",
+    "payload": "{\"CHANNEL\":\"upi\",\"REMITTANCE_TYPE\":\"\",\"MSG_ID\":\"REF2026041300009\",\"USER_TYPE\":\"retail\",\"CUST_TYPE\":\"retail\",\"CUST_ID\":\"12344556788867\",\"TRAN_TYPE\":\"FUND_TRANSFER\",\"AMOUNT\":\"50000\",\"CURRENCY\":\"356\",\"TXN_NARRATION\":\"Sending money to friend\",\"FROM_ACCT\":\"XXXXXXXX4567\",\"TO_ACCT\":\"XXXXXXXX8901\",\"TO_ACCT_IFSC_CODE\":\"SBIN0005678\",\"TO_ACCT_MOB\":\"9123456780\",\"MOB_NUM\":\"9876543210\",\"REMITTER_NAME\":\"Suresh Sharma\",\"BENEFICIARY_NAME\":\"Rajesh Kumar\",\"MCC\":\"5732\",\"DEVICE_ID\":\"TXN2026031100123409\",\"MERCH_ID\":\"12345\",\"MERCH_NAME\":\"Test\",\"ACCT_BALANCE\":\"1000000\",\"DEV_GEOCODE\":\"\",\"INPUTER\":\"\",\"AUTH_ENTITY_ID\":\"\",\"AUTHORIZER_ID\":\"\",\"PAYER_VPA\":\"customer@okicici\",\"PAYEE_VPA\":\"merchant@oksbi\",\"THIRD_PARTY\":\"\",\"MMID_REM\":\"12345\",\"MMID_BEN\":\"12346\",\"EMAIL_ID\":\"test@test.com\",\"SOURCE_COUNTRY\":\"INR\",\"BENE_COUNTRY\":\"INR\",\"EVENT_STATUS\":\"success\",\"REASON_CODE\":\"00\",\"ISO_ADDL_DATA\":\"\",\"SETTLEMENT_AMOUNT\":\"5000\",\"POS_CONDITION_CODE\":\"00\",\"ADDL_POS_INFO_SUBFILED8\":\"Data\",\"PAN\":\"1234567890123456\",\"PRODUCT_CODE\":\"45677\",\"TIMESTAMP\":\"2026-04-17T03:04:00.000+05:30\",\"Country\":\"\",\"Region\":\"\",\"City\":\"\",\"ZipCode\":\"\"}",
+    "deescalate": false,
+    "current_level": 1,
+    "rule_category": "LOW",
+    "assigned_to": 1,
+    "createdDate": "2026-04-21T14:28:55.47",
+    "updatedDate": "2026-04-21T14:28:55.47",
+    "final": true
+}

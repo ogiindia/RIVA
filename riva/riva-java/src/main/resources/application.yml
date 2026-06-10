@@ -1,0 +1,80 @@
+spring:
+  config:
+    import: optional:classpath:.env[.properties]
+
+  application:
+    name: ais-riva
+
+  # ── Database ───────────────────────────────────────────────
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+  # ── Redis ──────────────────────────────────────────────────
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # ── Docker Compose ─────────────────────────────────────────
+  docker:
+    compose:
+      enabled: false
+
+  # ── Spring AI (Gemini via OpenAI-compatible endpoint) ──────
+  ai:
+    openai:
+      api-key: ${GEMINI_API_KEY}
+      base-url: https://generativelanguage.googleapis.com/v1beta/openai
+      chat:
+        options:
+          model: gemini-2.5-pro
+
+# ── RIVA Application Config ──────────────────────────────────
+riva:
+  session:
+    max-age: 8h
+
+  case-service:
+    base-url: http://localhost:7051
+    timeout: 30s
+    alert-details:
+      path: /aisefrm/app/v1/getAlertDetailsByCaseId
+    # Add new endpoints here as new strategies are implemented:
+    # transaction-history:
+    #   path: /aisefrm/app/v1/getTransactionHistory
+
+  chat:
+    history-window-pairs: 3
+
+  prompt:
+    action-template: classpath:prompts/investigate.txt
+
+# ── Server ───────────────────────────────────────────────────
+server:
+  port: 8080
+
+# ── Actuator ─────────────────────────────────────────────────
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+# ── Logging ──────────────────────────────────────────────────
+logging:
+  level:
+    com.fis.ais.riva: DEBUG
+    org.springframework.ai: INFO

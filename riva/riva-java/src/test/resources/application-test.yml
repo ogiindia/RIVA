@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: ais-riva-test
+
+  profiles:
+    active: stub
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  docker:
+    compose:
+      enabled: false
+
+  ai:
+    openai:
+      api-key: ${GEMINI_API_KEY:test-key}
+      base-url: https://generativelanguage.googleapis.com/v1beta/openai
+      chat:
+        options:
+          model: gemini-2.5-pro
+
+riva:
+  session:
+    max-age: 1h
+  case-service:
+    base-url: http://localhost:7051
+    path: /aisefrm/app/v1/getAlertDetailsByCaseId
+    timeout: 5s
+  chat:
+    history-window-pairs: 3
+  prompt:
+    action-template: classpath:prompts/investigate.txt
+
+logging:
+  level:
+    com.fis.ais.riva: DEBUG
