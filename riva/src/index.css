@@ -1,0 +1,4 @@
+/* Frontend/src/index.css */
+@import './styles/variables.css';
+@import './styles/app.css';
+@import './styles/landing.css';
